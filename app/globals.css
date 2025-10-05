@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+    --foreground: #e3dddd; 
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+       --foreground: #e3dddd;  /* dark lavender / night shade */
+    --foreground: #e3dddd;   /* text in dark mode */
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;   /* make font slightly italic */
+}
+
+/* Needed for 3D flip effect */
+.perspective {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
