@@ -40,12 +40,6 @@ const projects: Project[] = [
     ],
   },
   {
-    name: "Canyon Ranch Resort Management",
-    description: "Wellness resort and health spa management system.",
-    liveLink: "https://www.canyonranch.com/",
-    tech: "Tech: NestJS, NextJS, GraphQL, Azure, Postgres, ReactJS, React Native",
-  },
-  {
     name: "Task Queue NestJS",
     description: "Rate-limited task queue system using NestJS",
     liveLink: "https://task-queue-nestjs.onrender.com/",
