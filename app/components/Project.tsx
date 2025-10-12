@@ -18,8 +18,8 @@ const projects: Project[] = [
     name: "Shopverse Microservices",
     description:
       "E-commerce backend with API Gateway and microservices for users, products, and orders.",
-    liveLink: "https://api-gateway-eohp.onrender.com",
-    tech: "Tech: NestJS, Express, Redis, MongoDB, BullMq, Microservices",
+    liveLink: "https://api-gateway-eohp.onrender.com/api",
+    tech: "Tech: NestJS, Express, Redis, MongoDB, BullMq, Microservices,swagger",
     githubLinks: [
       { name: "API Gateway", url: "https://github.com/sivagayathri/api-gateway" },
       { name: "Product Service", url: "https://github.com/sivagayathri/product-service" },
