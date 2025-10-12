@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Playfair_Display } from "next/font/google";
@@ -31,6 +32,12 @@ const floatingIcons = [
 ];
 
 export default function Hero() {
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
+
   return (
     <section
       id="hero"
@@ -66,57 +73,56 @@ export default function Hero() {
         >
           SENIOR SOFTWARE ENGINEER (2+ YEARS OF EXP)
         </motion.h2>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="text-3xl sm:text-4xl text-white max-w-2xl mt-6"
-      >
-      <Typewriter
-        words={[
-           "Hey! Come, let's explore new things...",
-          "I love backend, architecture, and learning new tech!"
-        ]}
-      loop
-      cursor
-      cursorStyle="_"
-      typeSpeed={50}
-      deleteSpeed={20}
-      delaySpeed={1500}
-    />
-    </motion.div>
-
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-3xl sm:text-4xl text-white max-w-2xl mt-6"
+        >
+          <Typewriter
+            words={[
+              "Hey! Come, let's explore new things...",
+              "I love backend, architecture, and learning new tech!"
+            ]}
+            loop
+            cursor
+            cursorStyle="_"
+            typeSpeed={50}
+            deleteSpeed={20}
+            delaySpeed={1500}
+          />
+        </motion.div>
       </div>
 
-      {/* Floating Icons */}
-      {floatingIcons.map((IconComponent, idx) => {
-        // random initial positions
-        const initialX = Math.random() * window.innerWidth - window.innerWidth / 2;
-        const initialY = Math.random() * window.innerHeight - window.innerHeight / 2;
-        const size = 24 + Math.random() * 24; // 24-48px
+      {/* Floating Icons (client-side only) */}
+      {windowSize.width > 0 &&
+        floatingIcons.map((IconComponent, idx) => {
+          const initialX = Math.random() * windowSize.width - windowSize.width / 2;
+          const initialY = Math.random() * windowSize.height - windowSize.height / 2;
+          const size = 24 + Math.random() * 24; // 24-48px
 
-        return (
-          <motion.div
-            key={idx}
-            initial={{ x: initialX, y: initialY, opacity: 0, scale: 0 }}
-            animate={{
-              x: [initialX, initialX + Math.random() * 200 - 100, initialX],
-              y: [initialY, initialY + Math.random() * 200 - 100, initialY],
-              opacity: [0, 1, 0.8, 1],
-              scale: [0, 1.2, 1],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 4, // random speed
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: "easeInOut",
-            }}
-            className="absolute"
-          >
-            <IconComponent size={size} className="text-white/80" />
-          </motion.div>
-        );
-      })}
+          return (
+            <motion.div
+              key={idx}
+              initial={{ x: initialX, y: initialY, opacity: 0, scale: 0 }}
+              animate={{
+                x: [initialX, initialX + Math.random() * 200 - 100, initialX],
+                y: [initialY, initialY + Math.random() * 200 - 100, initialY],
+                opacity: [0, 1, 0.8, 1],
+                scale: [0, 1.2, 1],
+              }}
+              transition={{
+                duration: 6 + Math.random() * 4,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+              className="absolute"
+            >
+              <IconComponent size={size} className="text-white/80" />
+            </motion.div>
+          );
+        })}
     </section>
   );
 }

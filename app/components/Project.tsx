@@ -28,6 +28,18 @@ const projects: Project[] = [
     ],
   },
   {
+     name: "Cred App",
+    description:
+    "A credential management platform that issues and verifies digital credentials with microservice architecture. It leverages asynchronous job processing and Redis streams for reliable event handling and background processing.",
+    liveLink: " https://cred-app-theta.vercel.app",
+     tech: "Tech: React.js, Node.js, Express.js, TypeScript, Redis, Supabase, Docker, Jest, Cypress, Vitest test",
+    githubLinks: [
+      { name: "Cred app FE", url: "https://github.com/sivagayathri/cred-app" },
+      { name: "Issuance Service", url: "https://github.com/sivagayathri/issuance-service" },
+      { name: "Verification Service", url: "https://github.com/sivagayathri/verification" },
+    ],
+  },
+  {
     name: "Canyon Ranch Resort Management",
     description: "Wellness resort and health spa management system.",
     liveLink: "https://www.canyonranch.com/",
