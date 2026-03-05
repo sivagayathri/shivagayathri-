@@ -71,7 +71,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-xl sm:text-2xl font-semibold text-white"
         >
-          SENIOR SOFTWARE ENGINEER (2+ YEARS OF EXP)
+          SENIOR SOFTWARE ENGINEER (3+ YEARS OF EXP)
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
